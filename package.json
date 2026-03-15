@@ -1,0 +1,30 @@
+{
+  "name": "nextra418",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "sort": "sort-package-json",
+    "start": "next start",
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^16.1.6",
+    "next": "latest",
+    "next-themes": "^0.4.6",
+    "nextra": "latest",
+    "nextra-theme-docs": "latest",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "pagefind": "^1.4.0",
+    "sort-package-json": "^3.6.1",
+    "typescript": "^5.0.0"
+  }
+}

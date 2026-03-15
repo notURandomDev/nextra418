@@ -1,0 +1,107 @@
+---
+title: Writing Content
+---
+
+import { Callout, Steps, Tabs, Cards } from "nextra/components";
+
+# Writing Content
+
+Nextra uses file-system routing, meaning the file structure in the `content` directory directly corresponds to the site's routing structure.
+
+## Directory Structure and Sorting
+
+By default, Nextra sorts documents alphabetically by filename. To customize sorting or set titles, use the `_meta.ts` file.
+
+### `_meta.ts` Configuration
+
+Create a `_meta.ts` file in each directory that exports an object where keys are filenames (without extension) and values can be strings (as titles) or objects (detailed configuration).
+
+```ts filename="content/en/docs/_meta.ts"
+export default {
+  introduction: "Introduction",
+  quickstart: "Quickstart",
+  guides: "Guides",
+  about: {
+    // detailed page configuration
+    title: "About Us",
+    type: "page", // type: "page" displays the link in the navbar
+    theme: {
+      breadcrumb: false, // hide breadcrumb
+    },
+  },
+};
+```
+
+<Callout type="warning">
+  Always use **English** for file and folder names to avoid potential routing issues. Configure
+  Chinese titles in `_meta.ts`.
+</Callout>
+
+## MDX Components
+
+Nextra supports using React components directly in Markdown. Nextra418 includes several common built-in components.
+
+### Common Component Examples
+
+<Tabs items={["Callout", "Tabs", "Cards"]}>
+  <Tabs.Tab>
+    ```mdx
+    import { Callout } from "nextra/components";
+
+    <Callout type="info">This is an info message.</Callout>
+    <Callout type="warning">This is a warning message.</Callout>
+    <Callout type="error">This is an error message.</Callout>
+    ```
+    <Callout type="info">This is an info message.</Callout>
+    <Callout type="warning">This is a warning message.</Callout>
+    <Callout type="error">This is an error message.</Callout>
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```mdx
+    import { Tabs } from "nextra/components";
+
+    <Tabs items={["npm", "pnpm"]}>
+      <Tabs.Tab>npm install</Tabs.Tab>
+      <Tabs.Tab>pnpm install</Tabs.Tab>
+    </Tabs>
+    ```
+
+    <Tabs items={["npm", "pnpm"]}>
+      <Tabs.Tab>npm install</Tabs.Tab>
+      <Tabs.Tab>pnpm install</Tabs.Tab>
+    </Tabs>
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```mdx
+    import { Cards } from "nextra/components";
+
+    <Cards>
+      <Cards.Card title="Introduction" href="/docs/introduction" />
+      <Cards.Card title="Visit Official Site" href="https://nextra.site" arrow />
+    </Cards>
+    ```
+    <Cards>
+      <Cards.Card title="Introduction" href="/docs/introduction" />
+      <Cards.Card title="Visit Official Site" href="https://nextra.site" arrow />
+    </Cards>
+
+  </Tabs.Tab>
+</Tabs>
+
+Refer to the [Nextra official documentation](https://nextra.site/docs/built-ins) for more component usage.
+
+## Useful Tips
+
+### Type Hints
+
+For a better development experience, Nextra418 has configured MDX type support. Your editor will provide autocomplete when typing component props.
+
+### Static Assets
+
+Place images in the `public` directory and reference them directly in Markdown:
+
+```md
+![My Image](/my-image.png)
+```

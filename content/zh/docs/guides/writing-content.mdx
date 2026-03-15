@@ -1,0 +1,108 @@
+---
+title: 编写内容
+---
+
+import { Callout, Steps, Tabs, Cards } from "nextra/components";
+
+# 编写内容
+
+Nextra 基于文件系统路由，这意味着 `content` 目录下的文件结构直接对应着网站的路由结构。
+
+## 目录结构与排序
+
+默认情况下，Nextra 会根据文件名（字母顺序）对文档进行排序。要自定义排序或设置标题，你需要使用 `_meta.ts` 文件。
+
+### `_meta.ts` 配置
+
+在每个目录下创建一个 `_meta.ts` 文件，导出一个对象，键是文件名（不带扩展名），值可以是字符串（作为标题）或对象（详细配置）。
+
+```ts filename="content/zh/docs/_meta.ts"
+export default {
+  introduction: "项目简介",
+  quickstart: "快速开始",
+  guides: "使用指南",
+  about: {
+    // 页面详细配置
+    title: "关于我们",
+    type: "page", // type: "page" 会将链接显示在导航栏
+    theme: {
+      breadcrumb: false, // 隐藏面包屑
+    },
+  },
+};
+```
+
+<Callout type="warning">
+  请务必使用**英文**命名文件和文件夹，以避免潜在的路由问题。中文标题请在 `_meta.ts` 中配置。
+</Callout>
+
+## MDX 组件
+
+Nextra 支持在 Markdown 中直接使用 React 组件。Nextra418 已经预置了一些常用的内置组件。
+
+### 常用组件示例
+
+<Tabs items={["Callout (提示块)", "Tabs (选项卡)", "Cards (卡片)"]}>
+  <Tabs.Tab>
+    ```mdx
+    import { Callout } from "nextra/components";
+
+    <Callout type="info">这是一个提示信息。</Callout>
+    <Callout type="warning">这是一个警告信息。</Callout>
+    <Callout type="error">这是一个错误信息。</Callout>
+    ```
+
+    <Callout type="info">这是一个提示信息。</Callout>
+    <Callout type="warning">这是一个警告信息。</Callout>
+    <Callout type="error">这是一个错误信息。</Callout>
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```mdx
+    import { Tabs } from "nextra/components";
+
+    <Tabs items={["npm", "pnpm"]}>
+      <Tabs.Tab>npm install</Tabs.Tab>
+      <Tabs.Tab>pnpm install</Tabs.Tab>
+    </Tabs>
+    ```
+
+    <Tabs items={["npm", "pnpm"]}>
+      <Tabs.Tab>npm install</Tabs.Tab>
+      <Tabs.Tab>pnpm install</Tabs.Tab>
+    </Tabs>
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```mdx
+    import { Cards } from "nextra/components";
+
+    <Cards>
+      <Cards.Card title="项目简介" href="/docs/introduction" />
+      <Cards.Card title="访问官网" href="https://nextra.site" arrow />
+    </Cards>
+    ```
+
+    <Cards>
+      <Cards.Card title="项目简介" href="/docs/introduction" />
+      <Cards.Card title="访问官网" href="https://nextra.site" arrow />
+    </Cards>
+
+  </Tabs.Tab>
+</Tabs>
+
+更多组件用法请参考 [Nextra 官方文档](https://nextra.site/docs/built-ins)。
+
+## 实用技巧
+
+### 类型提示
+
+为了获得更好的开发体验，Nextra418 已经配置好了 MDX 的类型支持。当你输入组件属性时，编辑器会提供自动补全。
+
+### 静态资源
+
+将图片放在 `public` 目录下，然后在 Markdown 中直接引用：
+
+```md
+![My Image](/my-image.png)
+```

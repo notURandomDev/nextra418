@@ -1,0 +1,117 @@
+---
+title: "快速开始"
+---
+
+import { Steps, Tabs, Callout } from "nextra/components";
+
+# 快速开始
+
+可以通过以下两种方式开始使用 **Nextra418**。
+
+## 🚀 一键部署
+
+最快、最简单的开始方式。点击下方按钮，将仓库克隆到你的 GitHub 并自动部署到 Vercel：
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FnotURandomDev%2Fnextra418)
+
+---
+
+## 💻 本地开发
+
+如果你想在本地进行开发和自定义，请按照以下步骤操作：
+
+<Steps>
+### 克隆仓库
+
+首先将仓库克隆到本地：
+
+```bash
+git clone git@github.com:notURandomDev/nextra418.git
+cd nextra418
+```
+
+### 安装依赖
+
+推荐使用 pnpm：
+
+<Tabs items={["pnpm", "npm", "yarn"]}>
+<Tabs.Tab>
+
+```bash
+pnpm i
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+npm i
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+yarn install
+```
+
+</Tabs.Tab>
+</Tabs>
+
+### 运行本地服务器
+
+<Tabs items={["pnpm", "npm", "yarn"]}>
+<Tabs.Tab>
+
+```bash
+pnpm dev
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+npm run dev
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+yarn dev
+```
+
+</Tabs.Tab>
+</Tabs>
+
+</Steps>
+
+至此，你就成功把本地服务跑起来啦～ 🎉 访问 `http://localhost:3000` 即可查看。
+
+## 🎨 自定义你的文档
+
+本地服务器运行成功后，你可以开始自定义文档内容：
+
+<Steps>
+### 配置站点信息
+
+在 `app/_config/layout.config.tsx` 和 `app/_config/meta.config.tsx` 中修改站点标题、Logo、SEO 等基础信息。
+
+### 编写文档内容
+
+在 `content` 目录下添加 MDX 文件。你可以参考现有的文件结构。
+
+### 组织文档结构
+
+通过各级目录下的 `_meta.ts` 文件控制菜单的显示顺序和标题。
+
+</Steps>
+
+<Callout type="info">
+  详细的操作指南请查看 [核心配置](/docs/guides/configuration) 和
+  [内容编写指南](/docs/guides/writing-content)。
+</Callout>
+
+## 🌐 部署上线
+
+如果你是手动克隆并开发的，可以将代码推送到 GitHub，然后在 [Vercel](https://vercel.com/) 中导入项目进行部署。Vercel 会自动识别 Next.js 项目并完成构建。

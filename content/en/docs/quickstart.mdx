@@ -1,0 +1,118 @@
+---
+title: "Quickstart"
+---
+
+import { Steps, Tabs, Callout } from "nextra/components";
+
+# Quickstart
+
+There are two ways to get started with **Nextra418**.
+
+## 🚀 One-Click Deploy
+
+The fastest and easiest way to start. Click the button below to clone the repository to your GitHub and automatically deploy to Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FnotURandomDev%2Fnextra418)
+
+---
+
+## 💻 Local Development
+
+If you want to develop and customize locally, please follow these steps:
+
+<Steps>
+### Clone Repository
+
+First, clone the repository to your local machine:
+
+```bash
+git clone git@github.com:notURandomDev/nextra418.git
+cd nextra418
+```
+
+### Install Dependencies
+
+pnpm is recommended:
+
+<Tabs items={["pnpm", "npm", "yarn"]}>
+<Tabs.Tab>
+
+```bash
+pnpm i
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+npm i
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+yarn install
+```
+
+</Tabs.Tab>
+</Tabs>
+
+## Run Local Server
+
+<Tabs items={["pnpm", "npm", "yarn"]}>
+<Tabs.Tab>
+
+```bash
+pnpm dev
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+npm run dev
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+yarn dev
+```
+
+</Tabs.Tab>
+</Tabs>
+
+</Steps>
+
+That's it—your local server is now running! 🎉 Visit `http://localhost:3000` to see your documentation.
+
+## 🎨 Customize Your Content
+
+Once the local server is running, you can start customizing your content:
+
+<Steps>
+### Configure Site Metadata
+
+Update site title, logo, SEO, and other basic info in `app/_config/layout.config.tsx` and `app/_config/meta.config.tsx`.
+
+### Write Documentation
+
+Add MDX files in the `content` directory. You can refer to the existing file structure.
+
+### Organize Sidebar Structure
+
+Control the menu order and titles using `_meta.ts` files in each directory.
+
+</Steps>
+
+<Callout type="info">
+  For detailed instructions, see [Core
+  Configuration](/docs/guides/configuration) and [Writing
+  Content](/docs/guides/writing-content).
+</Callout>
+
+## 🌐 Deployment
+
+If you cloned and developed locally, push your code to GitHub and then import the project on [Vercel](https://vercel.com/) for deployment. Vercel will automatically detect the Next.js project and finish the build.

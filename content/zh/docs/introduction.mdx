@@ -1,0 +1,40 @@
+---
+title: "项目简介"
+---
+
+import { Callout } from "nextra/components";
+
+# 项目简介
+
+**Nextra418** 是 Nextra 4 + i18n 的缩写，是一个基于 [Nextra 4](https://nextra.site/) 打造的极简文档模版，同时提供了开箱即用的 i18n 配置。
+
+它的设计哲学是 **Lean and Production-Ready**（轻量且生产可用）。剔除了复杂的冗余代码，只保留最核心的文档功能，让你能专注于内容创作。
+
+## 为什么选择 Nextra418？
+
+### 🚀 最新技术栈
+
+基于 **Next.js 16 (App Router)** 和 **Nextra 4** 构建，让你第一时间体验 React Server Components (RSC) 的强大性能。
+
+### 🌍 开箱即用的 i18n
+
+**Nextra418** 遵循 Nextra 4 官方推荐的**字典 (Dictionary)** 方案，并将其精简为最核心的配置。这使得多语言 UI 文案的管理更加规范，同时保持了模版的轻量。配置灵感来自 [官方 swr-site 示例](https://github.com/shuding/nextra/tree/main/examples/swr-site)。
+
+### 🔍 极速搜索
+
+集成了 [Pagefind](https://pagefind.app/) —— 基于 Rust 的静态搜索引擎，能在客户端提供毫秒级的全文检索体验，无需后端服务。
+
+<Callout type="default">
+  Nextra 内置 Pagefind 但需配置：需添加 postbuild 脚本在构建后索引 HTML 文件。详见
+  [配置指南](https://nextra.site/docs/guide/search#setup)。
+</Callout>
+
+### 🎨 灵活的样式
+
+保持 **Unopinionated** 的设计哲学，不强制捆绑特定的 CSS 框架。你可以根据项目需求，自由集成喜欢的样式方案。
+
+## 与官方模版的区别
+
+官方的 [nextra-docs-template](https://github.com/shuding/nextra-docs-template) 仍然停留在 Next.js 13 + Nextra 2 的时代，且长时间未维护。
+
+**Nextra418** 填补了这一空白，为你提供了一个现代化的、生产就绪的起点。
