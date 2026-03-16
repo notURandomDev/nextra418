@@ -10,6 +10,8 @@
 
 它的设计哲学是 **Lean and Production-Ready**（轻量且生产可用）。它填补了官方 `nextra-docs-template` 长期未维护的空白，剔除了复杂的冗余代码，只保留最核心的文档功能，让你能专注于内容创作。
 
+![Nextra418 Screenshot](./public/screenshot.png)
+
 ### ✨ 核心特性
 
 - **最新技术栈**：基于 **Next.js 16 (App Router)**、**Nextra 4** 和 **React 19** 构建，第一时间体验 React Server Components (RSC) 的强大性能。
