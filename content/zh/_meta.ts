@@ -7,4 +7,8 @@ export default {
     title: "更新日志",
     type: "page",
   },
+  comparison: {
+    title: "模版对比",
+    type: "page",
+  },
 };

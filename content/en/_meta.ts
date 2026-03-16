@@ -7,4 +7,8 @@ export default {
     title: "Release Notes",
     type: "page",
   },
+  comparison: {
+    title: "Comparison",
+    type: "page",
+  },
 };
