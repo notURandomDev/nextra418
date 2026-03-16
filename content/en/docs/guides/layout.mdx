@@ -1,0 +1,28 @@
+---
+title: Layout Configuration
+---
+
+import { Callout, Steps } from "nextra/components";
+
+# Layout Configuration
+
+The `app/_config/layout.config.tsx` file controls the overall layout of your site, including the navbar, sidebar, footer, and more.
+
+## Core Options
+
+- **docsRepositoryBase**: Base URL of the documentation repository, used to generate the "Edit this page" link.
+- **navbar**: Top navigation bar configuration, including Logo and project links.
+- **footer**: Footer content configuration.
+- **toc**: Right-side Table of Contents configuration.
+- **sidebar**: Left sidebar configuration.
+
+```tsx filename="app/_config/layout.config.tsx"
+export const getLayoutConfig = (dictionary: Dictionary) => ({
+  // ...
+  docsRepositoryBase: "https://github.com/your-name/your-repo/blob/main",
+  navbar: (
+    <Navbar logo={<span>My Docs</span>} projectLink="https://github.com/your-name/your-repo" />
+  ),
+  // ...
+});
+```

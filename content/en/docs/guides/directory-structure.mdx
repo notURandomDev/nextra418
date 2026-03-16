@@ -1,0 +1,34 @@
+---
+title: Directory Structure & Sorting
+---
+
+import { Callout } from "nextra/components";
+
+# Directory Structure and Sorting
+
+By default, Nextra sorts documents alphabetically by filename. To customize sorting or set titles, use the `_meta.ts` file.
+
+## `_meta.ts` Configuration
+
+Create a `_meta.ts` file in each directory that exports an object where keys are filenames (without extension) and values can be strings (as titles) or objects (detailed configuration).
+
+```ts filename="content/en/docs/_meta.ts"
+export default {
+  introduction: "Introduction",
+  quickstart: "Quickstart",
+  guides: "Guides",
+  about: {
+    // detailed page configuration
+    title: "About Us",
+    type: "page", // type: "page" displays the link in the navbar
+    theme: {
+      breadcrumb: false, // hide breadcrumb
+    },
+  },
+};
+```
+
+<Callout type="warning">
+  Always use **English** for file and folder names to avoid potential routing issues. Configure
+  Chinese titles in `_meta.ts`.
+</Callout>

@@ -1,0 +1,75 @@
+---
+title: Internationalization & Styling
+---
+
+import { Callout, Steps } from "nextra/components";
+
+# Internationalization (i18n)
+
+Nextra418 includes built-in dictionary-based multilingual support, addressing the limitation where Nextra's native i18n cannot cover UI component text.
+
+<Steps>
+    ### Define Languages
+
+    Define supported languages in `app/_dictionaries/i18n-config.ts`:
+
+    ```ts {3} filename="app/_dictionaries/i18n-config.ts"
+    const i18n = {
+      defaultLocale: "en",
+      locales: ["en", "zh", "es"], // Add "es" for Spanish
+    } as const;
+    ```
+
+    ### Add Dictionary Files
+
+    Create corresponding language files in the `app/_dictionaries` directory (e.g., `es.ts`) and populate them following the structure of `en.ts`:
+
+    ```ts filename="app/_dictionaries/es.ts"
+    export default {
+      backToTop: "Volver arriba",
+      editPage: "Editar esta página en GitHub",
+      search: {
+        placeholder: "Buscar contenido...",
+      },
+      feedback: {
+        content: "¿Tienes preguntas? Danos tu opinión",
+      },
+      toc: {
+        title: "En esta página",
+      },
+      release: {
+        title: "Lanzado",
+        notes: "Ver las notas de lanzamiento",
+      },
+      lastUpdated: "Última actualización el",
+    };
+    ```
+
+    ### Update Layout Configuration
+
+    Add new languages to the `i18n` option in `app/_config/layout.config.tsx` to display them in the language switcher dropdown:
+
+    ```tsx {4} filename="app/_config/layout.config.tsx"
+    i18n: [
+      { locale: "zh", name: "简体中文" },
+      { locale: "en", name: "English" },
+      { locale: "es", name: "Español" }, // Add Spanish
+    ],
+    ```
+
+    ### Create Content Directory
+
+    Create the corresponding language directory structure in the `content` directory and create documentation content:
+
+    ```text {6-8}
+    content/
+    ├── zh/
+    │   └── docs/
+    ├── en/
+    │   └── docs/
+    └── es/              # Create Spanish directory
+        └── docs/
+            └── introduction.mdx
+    ```
+
+</Steps>

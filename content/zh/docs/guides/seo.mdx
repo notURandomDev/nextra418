@@ -1,0 +1,20 @@
+---
+title: SEO 配置
+---
+
+# SEO 配置
+
+`app/_config/meta.config.tsx` 文件用于管理站点的元数据（Metadata），这对 SEO 至关重要。
+
+你可以在这里修改站点的标题、描述、关键词以及 Open Graph 图片等信息。
+
+```tsx filename="app/_config/meta.config.tsx"
+export const getMetadata = (): Metadata => ({
+  title: {
+    default: "My Docs",
+    template: "%s | My Docs",
+  },
+  description: "A minimal documentation site.",
+  // ...
+});
+```

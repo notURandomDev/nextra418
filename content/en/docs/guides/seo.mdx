@@ -1,0 +1,20 @@
+---
+title: SEO Configuration
+---
+
+# SEO Configuration
+
+The `app/_config/meta.config.tsx` file manages site metadata, which is crucial for SEO.
+
+You can modify the site title, description, keywords, and Open Graph images here.
+
+```tsx filename="app/_config/meta.config.tsx"
+export const getMetadata = (): Metadata => ({
+  title: {
+    default: "My Docs",
+    template: "%s | My Docs",
+  },
+  description: "A minimal documentation site.",
+  // ...
+});
+```

@@ -1,0 +1,33 @@
+---
+title: 目录结构与排序
+---
+
+import { Callout } from "nextra/components";
+
+# 目录结构与排序
+
+默认情况下，Nextra 会根据文件名（字母顺序）对文档进行排序。要自定义排序或设置标题，你需要使用 `_meta.ts` 文件。
+
+## `_meta.ts` 配置
+
+在每个目录下创建一个 `_meta.ts` 文件，导出一个对象，键是文件名（不带扩展名），值可以是字符串（作为标题）或对象（详细配置）。
+
+```ts filename="content/zh/docs/_meta.ts"
+export default {
+  introduction: "项目简介",
+  quickstart: "快速开始",
+  guides: "使用指南",
+  about: {
+    // 页面详细配置
+    title: "关于我们",
+    type: "page", // type: "page" 会将链接显示在导航栏
+    theme: {
+      breadcrumb: false, // 隐藏面包屑
+    },
+  },
+};
+```
+
+<Callout type="warning">
+  请务必使用**英文**命名文件和文件夹，以避免潜在的路由问题。中文标题请在 `_meta.ts` 中配置。
+</Callout>

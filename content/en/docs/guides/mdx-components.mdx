@@ -1,47 +1,14 @@
 ---
-title: Writing Content
+title: MDX Components
 ---
 
-import { Callout, Steps, Tabs, Cards } from "nextra/components";
+import { Callout, Tabs, Cards } from "nextra/components";
 
-# Writing Content
-
-Nextra uses file-system routing, meaning the file structure in the `content` directory directly corresponds to the site's routing structure.
-
-## Directory Structure and Sorting
-
-By default, Nextra sorts documents alphabetically by filename. To customize sorting or set titles, use the `_meta.ts` file.
-
-### `_meta.ts` Configuration
-
-Create a `_meta.ts` file in each directory that exports an object where keys are filenames (without extension) and values can be strings (as titles) or objects (detailed configuration).
-
-```ts filename="content/en/docs/_meta.ts"
-export default {
-  introduction: "Introduction",
-  quickstart: "Quickstart",
-  guides: "Guides",
-  about: {
-    // detailed page configuration
-    title: "About Us",
-    type: "page", // type: "page" displays the link in the navbar
-    theme: {
-      breadcrumb: false, // hide breadcrumb
-    },
-  },
-};
-```
-
-<Callout type="warning">
-  Always use **English** for file and folder names to avoid potential routing issues. Configure
-  Chinese titles in `_meta.ts`.
-</Callout>
-
-## MDX Components
+# MDX Components
 
 Nextra supports using React components directly in Markdown. Nextra418 includes several common built-in components.
 
-### Common Component Examples
+## Common Component Examples
 
 <Tabs items={["Callout", "Tabs", "Cards"]}>
   <Tabs.Tab>
@@ -91,17 +58,3 @@ Nextra supports using React components directly in Markdown. Nextra418 includes 
 </Tabs>
 
 Refer to the [Nextra official documentation](https://nextra.site/docs/built-ins) for more component usage.
-
-## Useful Tips
-
-### Type Hints
-
-For a better development experience, Nextra418 has configured MDX type support. Your editor will provide autocomplete when typing component props.
-
-### Static Assets
-
-Place images in the `public` directory and reference them directly in Markdown:
-
-```md
-![My Image](/my-image.png)
-```
