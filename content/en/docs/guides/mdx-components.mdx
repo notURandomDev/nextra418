@@ -8,53 +8,80 @@ import { Callout, Tabs, Cards } from "nextra/components";
 
 Nextra supports using React components directly in Markdown. Nextra418 includes several common built-in components.
 
-## Common Component Examples
+## Callout
 
-<Tabs items={["Callout", "Tabs", "Cards"]}>
-  <Tabs.Tab>
-    ```mdx
-    import { Callout } from "nextra/components";
+Callout components are used to highlight important information, warnings, or errors.
 
-    <Callout type="info">This is an info message.</Callout>
-    <Callout type="warning">This is a warning message.</Callout>
-    <Callout type="error">This is an error message.</Callout>
-    ```
-    <Callout type="info">This is an info message.</Callout>
-    <Callout type="warning">This is a warning message.</Callout>
-    <Callout type="error">This is an error message.</Callout>
+```mdx
+import { Callout } from "nextra/components";
 
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```mdx
-    import { Tabs } from "nextra/components";
+<Callout type="info">This is an info message.</Callout>
+<Callout type="warning">This is a warning message.</Callout>
+<Callout type="error">This is an error message.</Callout>
+```
 
-    <Tabs items={["npm", "pnpm"]}>
-      <Tabs.Tab>npm install</Tabs.Tab>
-      <Tabs.Tab>pnpm install</Tabs.Tab>
-    </Tabs>
-    ```
+<Callout type="info">This is an info message.</Callout>
+<Callout type="warning">This is a warning message.</Callout>
+<Callout type="error">This is an error message.</Callout>
 
-    <Tabs items={["npm", "pnpm"]}>
-      <Tabs.Tab>npm install</Tabs.Tab>
-      <Tabs.Tab>pnpm install</Tabs.Tab>
-    </Tabs>
+## Tabs
 
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```mdx
-    import { Cards } from "nextra/components";
+Tabs components allow you to organize content into multiple tabs, useful for showing different versions or alternatives.
 
-    <Cards>
-      <Cards.Card title="Introduction" href="/docs/introduction" />
-      <Cards.Card title="Visit Official Site" href="https://nextra.site" arrow />
-    </Cards>
-    ```
-    <Cards>
-      <Cards.Card title="Introduction" href="/docs/introduction" />
-      <Cards.Card title="Visit Official Site" href="https://nextra.site" arrow />
-    </Cards>
+````mdx
+import { Tabs } from "nextra/components";
 
-  </Tabs.Tab>
+<Tabs items={["npm", "pnpm"]}>
+<Tabs.Tab>
+
+```bash
+npm install
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+pnpm install
+```
+
+</Tabs.Tab>
 </Tabs>
+````
+
+<Tabs items={["npm", "pnpm"]}>
+<Tabs.Tab>
+
+```bash
+npm install
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+pnpm install
+```
+
+</Tabs.Tab>
+</Tabs>
+
+## Cards
+
+Cards components are used to display links or navigation items in a grid layout.
+
+```mdx
+import { Cards } from "nextra/components";
+
+<Cards>
+  <Cards.Card title="Introduction" href="/docs/introduction" />
+  <Cards.Card title="Visit Official Site" href="https://nextra.site" arrow />
+</Cards>
+```
+
+<Cards>
+  <Cards.Card title="Introduction" href="/docs/introduction" />
+  <Cards.Card title="Visit Official Site" href="https://nextra.site" arrow />
+</Cards>
 
 Refer to the [Nextra official documentation](https://nextra.site/docs/built-ins) for more component usage.

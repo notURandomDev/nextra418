@@ -8,55 +8,80 @@ import { Callout, Tabs, Cards } from "nextra/components";
 
 Nextra 支持在 Markdown 中直接使用 React 组件。Nextra418 已经预置了一些常用的内置组件。
 
-## 常用组件示例
+## Callout（提示块）
 
-<Tabs items={["Callout (提示块)", "Tabs (选项卡)", "Cards (卡片)"]}>
-  <Tabs.Tab>
-    ```mdx
-    import { Callout } from "nextra/components";
+Callout 组件用于突出显示重要信息、警告或错误。
 
-    <Callout type="info">这是一个提示信息。</Callout>
-    <Callout type="warning">这是一个警告信息。</Callout>
-    <Callout type="error">这是一个错误信息。</Callout>
-    ```
+```mdx
+import { Callout } from "nextra/components";
 
-    <Callout type="info">这是一个提示信息。</Callout>
-    <Callout type="warning">这是一个警告信息。</Callout>
-    <Callout type="error">这是一个错误信息。</Callout>
+<Callout type="info">这是一个提示信息。</Callout>
+<Callout type="warning">这是一个警告信息。</Callout>
+<Callout type="error">这是一个错误信息。</Callout>
+```
 
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```mdx
-    import { Tabs } from "nextra/components";
+<Callout type="info">这是一个提示信息。</Callout>
+<Callout type="warning">这是一个警告信息。</Callout>
+<Callout type="error">这是一个错误信息。</Callout>
 
-    <Tabs items={["npm", "pnpm"]}>
-      <Tabs.Tab>npm install</Tabs.Tab>
-      <Tabs.Tab>pnpm install</Tabs.Tab>
-    </Tabs>
-    ```
+## Tabs（选项卡）
 
-    <Tabs items={["npm", "pnpm"]}>
-      <Tabs.Tab>npm install</Tabs.Tab>
-      <Tabs.Tab>pnpm install</Tabs.Tab>
-    </Tabs>
+Tabs 组件允许你将内容组织到多个选项卡中，适用于展示不同版本或替代方案。
 
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```mdx
-    import { Cards } from "nextra/components";
+````mdx
+import { Tabs } from "nextra/components";
 
-    <Cards>
-      <Cards.Card title="项目简介" href="/docs/introduction" />
-      <Cards.Card title="访问官网" href="https://nextra.site" arrow />
-    </Cards>
-    ```
+<Tabs items={["npm", "pnpm"]}>
+<Tabs.Tab>
 
-    <Cards>
-      <Cards.Card title="项目简介" href="/docs/introduction" />
-      <Cards.Card title="访问官网" href="https://nextra.site" arrow />
-    </Cards>
+```bash
+npm install
+```
 
-  </Tabs.Tab>
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+pnpm install
+```
+
+</Tabs.Tab>
 </Tabs>
+````
+
+<Tabs items={["npm", "pnpm"]}>
+<Tabs.Tab>
+
+```bash
+npm install
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```bash
+pnpm install
+```
+
+</Tabs.Tab>
+</Tabs>
+
+## Cards（卡片）
+
+Cards 组件用于以网格布局显示链接或导航项。
+
+```mdx
+import { Cards } from "nextra/components";
+
+<Cards>
+  <Cards.Card title="项目简介" href="/docs/introduction" />
+  <Cards.Card title="访问官网" href="https://nextra.site" arrow />
+</Cards>
+```
+
+<Cards>
+  <Cards.Card title="项目简介" href="/docs/introduction" />
+  <Cards.Card title="访问官网" href="https://nextra.site" arrow />
+</Cards>
 
 更多组件用法请参考 [Nextra 官方文档](https://nextra.site/docs/built-ins)。
