@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "../_dictionaries/get-dictionary";
 import { getLayoutConfig } from "@/_config/layout.config";
 import { getMetadata } from "@/_config/meta.config";
+import { Analytics } from "@vercel/analytics/react";
 import "nextra-theme-docs/style.css";
 
 export const metadata: Metadata = getMetadata();
@@ -16,10 +17,7 @@ interface IRootLayoutProps {
   }>;
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: IRootLayoutProps) {
+export default async function RootLayout({ children, params }: IRootLayoutProps) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
   const pageMap = await getPageMap(`/${lang}`);
@@ -27,13 +25,12 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} dir="ltr" suppressHydrationWarning>
-      <Head>
-        {/* Your additional tags should be passed as `children` of `<Head>` element */}
-      </Head>
+      <Head>{/* Your additional tags should be passed as `children` of `<Head>` element */}</Head>
       <body>
         <Layout pageMap={pageMap} {...layoutConfig}>
           {children}
         </Layout>
+        <Analytics />
       </body>
     </html>
   );
