@@ -35,6 +35,14 @@ export const getMetadata = (): Metadata => ({
     type: "website",
     /** Page URL */
     url: "./",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Nextra418 Open Graph Image",
+      },
+    ],
   },
   /** Other metadata */
   other: {
