@@ -1,4 +1,6 @@
-export default {
+import { MetaRecord } from "nextra";
+
+const metaRecord: MetaRecord = {
   docs: {
     title: "文档",
     type: "page",
@@ -12,3 +14,5 @@ export default {
     type: "page",
   },
 };
+
+export default metaRecord;
